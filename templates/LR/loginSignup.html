@@ -1,0 +1,41 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" href="{% static 'css/loginSignup.css'%}">
+  <link rel="stylesheet" href="{% static 'css/font-awesome.min.css'%}">
+</head>
+<body>
+
+<div class="login-page">
+  <div class="form">
+    <form class="register-form" method="post" id="reg">
+      {% csrf_token %}
+      <input type="text" name="username" placeholder="name"/>
+      <input type="password" name="password" placeholder="password"/>
+      <input type="number" name="number" placeholder="number"/>
+      <input type="text" name="email" placeholder="email address"/>
+      <button>create</button>
+      <a href="/accounts/login/"><p class="message">Already registered?<span>Sign In</span></p></a>
+    </form>
+    <form class="login-form" method="post">
+      {% csrf_token %}
+      {% include 'partial/messages.html' %}
+      <input type="text"  name="username" placeholder="username"/>
+      <input type="password" name="password" placeholder="password"/>
+      <button>login</button>
+      <a href="/accounts/register/"><p class="message">Not registered?<span>Create an account</span></p></a>
+    </form>
+    <p class="frg_pass">Forgot Password?<a href="/accounts/reset_password/" class="forgot_pass">click here</a></p>
+    <div class="social_icon">
+    <a href="{% url 'social:begin' 'google-oauth2' %}"><i class="fa fa-google-plus"></i></a>
+    <a href=""><i class="fa fa-facebook"></i></a>
+    <a href=""><i class="fa fa-twitter"></i></a>
+    </div>
+  </div>
+</div>
+</body>
+<script src="{% static 'js/jquery.min.js'%}"></script>
+<script src="{% static 'js/custom.js'%}"></script>
+</html>

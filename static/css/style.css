@@ -1,0 +1,252 @@
+	body{
+		background-image: url("../images/bgbody.jpg");
+	}
+
+	/*-----------Nav bar---------------------*/
+		.container-fluid{
+			margin: 0;
+			padding: 0;
+			background-color: #13040482;
+		}
+		.nav_custom{
+			background-color: #13040482!important;
+		}
+		.logo_nav{
+
+			width: 150px;
+
+			}
+		.search_nav{
+			display: contents;
+		}
+		.search_nav span i{
+			margin-right: 10px;
+		}
+		.search_nav span i{
+			width: 30px;
+			color: aliceblue;
+		}
+		/*#none{
+			display: none;
+		}*/
+		.form-inline button{
+	    background: none;
+	    color: aliceblue;
+	    border: none;
+		}
+		/*.btn_none:hover .h{
+			display: block;
+		}*/
+		.nav-item a{
+		    color: aliceblue!important;
+		}
+
+	/*--------------OWL-------------------*/
+
+		.slide_section #owl-one .owl-dots{
+			margin-top: 34px;
+			}
+		.poster{
+			height: 410px;
+		}
+		.owl-item{
+			/*width: 22%!important;*/
+			color: red;
+		}
+		.owl-carousel .item img{
+	  		margin-top: 40px;
+	  		border-radius: 10px;
+		}
+		.item{
+			position: relative;
+		}
+		.caption{
+			position: absolute;
+			top: 50%;
+			left: 10%;
+			
+		}
+		.caption_all{
+			color: aliceblue;
+			font-weight: 400;
+	   		font-size: 17px;
+		}
+		.m_title{
+			letter-spacing: 6px;
+			font-weight: 600;
+	   		font-size: 25px;
+		}
+		.info_new{
+			position: absolute;
+			top: 50%;
+			left: 10%;
+
+		}
+		.info_new span{
+			color: aliceblue;
+			font-weight: 300;
+			font-size: 12px;
+		}
+		.caption i span{
+			font-style: initial;
+	    	font-weight: 900;	
+	    	font-size: 20px;
+		}
+		.caption a{
+			color: aliceblue;
+			font-weight: 700;
+		}
+		.caption a img {
+			width: 33px!important;
+	    	padding-top: 0px!important;
+	    	margin-right: 10px;
+	    	margin-top: 0px!important;
+	    	display: inline-block!important;
+	    	
+		}
+		
+
+	/*--------------New arrivals section--------------------*/
+
+		.newarrival_section .container h3{
+			color: aliceblue;
+			font-weight: 400;
+			font-size: 20px;
+			position: relative;
+		}
+		.newarrival_section .container h3:before{
+			height: 100%;
+			content: "";
+			position: absolute;
+			left: -10px;
+			width: 2px;
+			background-color: aliceblue;
+			top: 0;
+			right: 0;
+			bottom: 0;
+		}
+		hr{
+			border-top: 1px solid rgb(0 0 0)!important;
+		}
+		.newarrival_section .item img{
+			    width: 200px;
+			    height: 335px;
+		}
+		.owl-next , .owl-prev{
+			color: aliceblue!important;
+			/*position: absolute;*/
+		}
+		/*.owl-nav{
+			position: relative;;
+		}*/
+		#owl-two .item img{
+			margin-top: 25px!important;
+		}
+		#owl-two .owl-nav{
+			margin-top: 0px!important;
+		}
+		.item_child{
+			position: relative;
+		}
+		.item_child img{
+				opacity: 0.8;
+			}
+		.hover_play{
+			width: 30px!important;
+		    height: 30px!important;
+		    padding: 0px!important;
+		    position: absolute!important;
+		    top: 0!important;
+		    bottom: 0!important;
+		    right: 0!important;
+		    left: 0!important;
+		    margin: auto!important;
+		}
+
+	/*-----------------------------PS-----------SECTION*/
+		.ps_section .container h3{
+			color: aliceblue;
+			font-weight: 400;
+			font-size: 20px;
+			position: relative;
+		}
+
+		.ps_section .container h3:before{
+			height: 100%;
+			content: "";
+			position: absolute;
+			left: -10px;
+			width: 2px;
+			background-color: aliceblue;
+			top: 0;
+			right: 0;
+			bottom: 0;
+		}
+		.owl-nav{
+			position: absolute;
+		    top: -65px;
+		    right: 1px;
+		    font-size: 24px;
+		    font-weight: 300;
+		}
+		.owl-next:before{
+		    height: 31%;
+		    content: "";
+		    position: absolute;
+		    left: 25px;
+		    width: 2px;
+		    background-color: #65696d;
+		    top: 20px;
+		    right: 0;
+		    bottom: 0;
+		}
+		.ps_section .item .item_child img{
+			height: 335px;
+		}
+		.ps_section #owl-three .item img{
+	  		margin-top: 0px;
+	  		border-radius: 10px;
+		}
+
+
+	/*-------------------Galley section---------------------*/
+	.item_list{
+		/*padding: 20px;*/
+
+	}
+	.item_ply_btn{
+		width: 35%;
+		float: left;
+	}
+	.item_ply_btn{
+		padding: 10px!important;
+		margin-top: 0px!important;
+	}
+	.item_ply_btn img{
+		margin-top: 0px!important;
+	}
+	.gallery_section .owl-stage-outer .owl-stage .owl-item{
+		background-color: #02020f;
+		border: 2px solid #0e0e27;
+		border-radius: 10px;
+	}
+	.item_list_type{
+		margin-top: 10px!important; 
+	}
+	.gallery_heading{
+		color: aliceblue;
+	    font-weight: 400;
+	    font-size: 20px;
+        margin-top: 20px;
+	}
+	.gallery_heading:before{
+		height: 15%;
+	    content: "";
+	    position: absolute;
+	    left: 0px;
+	    width: 2px;
+	    background-color: aliceblue;
+	    top: 20px;
+	    right: 0;
+	    bottom: 0;
+		}

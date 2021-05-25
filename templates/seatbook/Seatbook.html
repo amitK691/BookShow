@@ -1,0 +1,123 @@
+{% load static %}
+<html>
+<head>
+<!-- <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script> -->
+<script type="text/javascript" src="/static/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="/static/js/underscore-min.js"></script>
+<script type="text/javascript" src="/static/js/backbone.js"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.css'%}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/prima.css'%}">
+<script type="text/javascript">
+  function getvalue(e,value){
+    getvalue=document.querySelector("#movie")
+    ans=getvalue.options[getvalue.selectedIndex].value;
+    document.querySelector(".display").textContent=ans;
+  }
+</script>
+</head>
+<title>
+	Movie Seat Reservation
+</title>
+<body>
+<div class="movie-container">
+  <form method="post">
+  {% csrf_token %}
+  <label>Select a movie</label>
+  <select id="movie">
+  {% for trend in trends %}
+    <option id="name"  name="movie" value={{trend.Price}} class="display">{{trend.Title}}</option>
+  {% endfor %}
+  </select>
+
+  <ul class="showcase">
+      <li>
+        <div class="seat"></div>
+        <small>N/A</small>
+      </li>
+      <li>
+        <div class="seat selected"></div>
+        <small>Selected</small>
+      </li>
+      <li>
+        <div class="seat"></div>
+        <small></small>
+      </li>
+  </ul>
+
+<div class="container">
+    <div class="screen"></div>
+
+    <div class="row">
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+    </div>
+
+    <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+    </div>
+
+    <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+    </div>
+
+    <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+    </div>
+
+    <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+    </div>
+
+    <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+      </div>
+</div>
+<p class="text">You have selected <span name="count" id="count"></span> seats for price of INR.<span id="price" name="price">0</span>
+</p>
+<button class="confirmselection btn-primary" id="confirmselection">Confirm</button>
+</form>
+</div>
+<script src="{% static 'js/jquery-3.2.1.js' %}"></script>
+<script src="{% static 'js/prima.js'%}"></script>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+{% if post%}
+<center><h1>Search result found</h1></center>
+{% for i in post %}
+<center><h2>{{i.Title}}</h2></center>
+{% endfor %}
+	{% else %}
+	<center><h1>Nothing found</h1></center>
+{% endif %}
+
+</body>
+</html>

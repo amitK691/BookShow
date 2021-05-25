@@ -1,0 +1,332 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css'%}">
+	<link rel="stylesheet" href="{% static 'icons/font/bootstrap-icons.css'%}">
+	<link rel="stylesheet" href="{% static 'css/font-awesome.min.css'%}">
+	<link rel="stylesheet" href="{% static 'OwlCarousel2/dist/assets/owl.carousel.min.css'%}">
+	<link rel="stylesheet" href="{% static 'OwlCarousel2/dist/assets/owl.theme.default.min.css'%}">
+	<link rel="stylesheet" href="{% static 'css/style.css'%}">
+</head>
+<body>
+<section class="nav_section">
+	<div class="container-fluid">
+		<div class="container">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light nav_custom">
+		  <img class="navbar-brand logo_nav" src="{% static 'images/bms.png'%}">
+		 
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		    <ul class="navbar-nav mr-auto">
+		      <li class="nav-item active">
+		        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="#">Trailor</a>
+		      </li>
+		      <li class="nav-item">
+		       <a class="nav-link" href="#">About</a>
+		  	 </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="#">Contact Us</a>
+		      </li>
+		    </ul>
+		    <form action="{% url 'search' %}" method="get" class="form-inline my-2 my-lg-0">
+		      <input class="form-control mr-sm-2" name="search" id="none" type="search" placeholder="Search" aria-label="Search">
+		     <button class="btn_none"><span class="h"><i class="bi bi-search"></i></span></button>
+		    </form>
+		    <div class="col-lg-3 search_nav">
+    	{% if user.is_authenticated %}
+		    	<a href="/accounts/logout/"><button class="btn btn-primary">Logout</button></a>
+		    	<a href="/password-change/"><button class="btn btn-primary">Changepassword</button></a>
+		    </div>
+	 	{% else %}
+		    	<a href="/accounts/login/"><button class="btn btn-primary">Login</button></a>
+		    </div>
+    	{% endif %}
+		  </div>
+		</nav>
+		
+	</div>
+	</div>
+</section>
+
+<section class="slide_section">
+	<div id="owl-one" class="owl-carousel owl-theme">
+		{% for trend in trends %}
+		    <div class="item">
+		    	<!-- <img src="{% static 'images/ronin.jpg' %}"> -->
+		    	<img class ="poster" src="{{trend.Poster.url}}">
+		    	<div class="caption">
+		    		<a href="/seatbook/"><button class="btn btn-success mb-3">BOOK NOW</button></a>
+		    		<h3 class="m_title caption_all">{{trend.Title}}</h3>
+		    		<h3 class="caption_all">Category : {{trend.Category}}</h3>
+		    		<h3 class="caption_all">Genre : {{trend.Genre}}</h3>
+		    		<a href=""><img src="{{trend.Playlogo.url}}">PLAY TRAILER</a>
+		    	</div>
+			</div>
+			{% endfor %}
+		    <!-- <div class="item">
+		    	<img src="{% static 'images/ronin.jpg' %}">
+		    	<div class="caption">
+		    		<a href="/seatbook/"><button class="btn btn-success mb-3">BOOK NOW</button></a>
+		    		<h3 class="m_title caption_all">47 Ronin</h3>
+		    		<h3 class="caption_all">Category : English Movie 2019</h3>
+		    		<h3 class="caption_all">Genre : Action, Drama</h3>
+		    		<a href=""><img src="{% static 'images/play-button.png'%}">PLAY TRAILER</a>
+		    	</div>
+			</div>
+			<div class="item">
+		    	<img src="{% static 'images/ronin.jpg' %}">
+		    	<div class="caption">
+		    		<a href="/seatbook/"><button class="btn btn-success mb-3">BOOK NOW</button></a>
+		    		<h3 class="m_title caption_all">47 Ronin</h3>
+		    		<h3 class="caption_all">Category : English Movie 2019</h3>
+		    		<h3 class="caption_all">Genre : Action, Drama</h3>
+		    		<a href=""><img src="{% static 'images/play-button.png'%}">PLAY TRAILER</a>
+		    	</div>
+			</div>
+			<div class="item">
+		    	<img src="{% static 'images/ronin.jpg' %}">
+		    	<div class="caption">
+		    		<a href="/seatbook/"><button class="btn btn-success mb-3">BOOK NOW</button></a>
+		    		<h3 class="m_title caption_all">47 Ronin</h3>
+		    		<h3 class="caption_all">Category : English Movie 2019</h3>
+		    		<h3 class="caption_all">Genre : Action, Drama</h3>
+		    		<a href=""><img src="{% static 'images/play-button.png'%}">PLAY TRAILER</a>
+		    	</div>
+			</div>
+			<div class="item">
+		    	<img src="{% static 'images/ronin.jpg' %}">
+		    	<div class="caption">
+		    		<a href="/seatbook/"><button class="btn btn-success mb-3">BOOK NOW</button></a>
+		    		<h3 class="m_title caption_all">47 Ronin</h3>
+		    		<h3 class="caption_all">Category : English Movie 2019</h3>
+		    		<h3 class="caption_all">Genre : Action, Drama</h3>
+		    		<a href=""><img src="{% static 'images/play-button.png'%}">PLAY TRAILER</a>
+		    	</div>
+			</div> -->
+	  
+	</div>
+</section>
+
+<section class="newarrival_section  mt-5">
+	<div class="container">
+		<h3>New Arrivals</h3>
+		<hr>
+		<div id="owl-two" class=" owl-carousel owl-theme  ">
+		<!-- {% for new in newarrives %} -->
+	{% for dest in dests %}
+		    <div class="item">
+	    	 	<div class="item_child">
+		    	<img src="{{dest.Poster.url}}" alt="image_here">
+					<img class="hover_play" src="static/images/play-button.png">
+			    	<div class="info_new">
+			    	<span>{{dest.Title}}</span><br>
+			    	<span>{{dest.Duration}}</span><br>
+			    	<span>{{dest.Description}}</span>
+			    	
+			    	</div>
+		   		</div>
+		
+			    	<!-- <img src="{{new.Poster.url}}"> -->
+			</div>
+			{% endfor %}
+			<!-- {% endfor %} -->
+			<!-- <div class="item">
+		    	<img src="{% static 'images/dora.jpg'%}">
+		    	<img src="{% static 'images/dora.jpg'%}">
+			</div>
+			<div class="item">
+		    	<img src="{% static 'images/dora.jpg'%}">
+		    	<img src="{% static 'images/dora.jpg'%}">
+			</div>
+			<div class="item">
+		    	<img src="{% static 'images/dora.jpg'%}">
+		    	<img src="{% static 'images/dora.jpg'%}">
+			</div>
+			<div class="item">
+		    	<img src="{% static 'images/dora.jpg'%}">
+		    	<img src="{% static 'images/dora.jpg'%}">
+			</div>
+			<div class="item">
+		    	<img src="{% static 'images/dora.jpg'%}">
+		    	<img src="{% static 'images/dora.jpg'%}">
+			</div>
+			<div class="item">
+		    	<img src="{% static 'images/dora.jpg'%}">
+		    	<img src="{% static 'images/dora.jpg'%}">
+			</div>
+			<div class="item">
+		    	<img src="{% static 'images/dora.jpg'%}">
+		    	<img src="{% static 'images/dora.jpg'%}">
+			</div>
+		    <div class="item">
+		    	<img src="{% static 'images/dora.jpg'%}">
+		    	<img src="{% static 'images/dora.jpg'%}">
+			</div>
+			<div class="item">
+		    	<img src="{% static 'images/dora.jpg'%}">
+		    	<img src="{% static 'images/dora.jpg'%}">
+			</div>
+			<div class="item">
+		    	<img src="{% static 'images/dora.jpg'%}">
+		    	<img src="{% static 'images/dora.jpg'%}">
+			</div>
+			<div class="item">
+		    	<img src="{% static 'images/dora.jpg'%}">
+		    	<img src="{% static 'images/dora.jpg'%}">
+			</div>
+			<div class="item">
+		    	<img src="{% static 'images/dora.jpg'%}">
+		    	<img src="{% static 'images/dora.jpg'%}">
+			</div>
+			<div class="item">
+		    	<img src="{% static 'images/dora.jpg'%}">
+		    	<img src="{% static 'images/dora.jpg'%}">
+			</div>
+			<div class="item">
+		    	<img src="{% static 'images/dora.jpg'%}">
+		    	<img src="{% static 'images/dora.jpg'%}">
+			</div>
+			<div class="item">
+		    	<img src="{% static 'images/dora.jpg'%}">
+		    	<img src="{% static 'images/dora.jpg'%}">
+			</div> -->
+		</div>	
+	</div>
+</section>
+
+<section class="ps_section">
+	<div class="container">
+		<h3 class="m-0 mt-5 mb-3">POPULAR SHOW</h3>
+		<hr class="m-0">
+		<div id="owl-three" class="owl-carousel mt-4 owl-theme">
+	{% for p in popularshow %}
+		<div class="item">
+			<div class="item_child">
+			<img src="{{p.Poster.url}}">
+			<div class="info_new">
+		    	<span>{{p.Title}}</span><br>
+		    	<span>{{p.Duration}}</span><br>
+		    	<span>{{p.Description}}</span>
+		    </div>
+		</div>
+	</div>
+	{% endfor %}
+  </div>
+ </div>
+</section>
+
+<section class="gallery_section">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3">
+				<h3 class="gallery_heading">Suggested Movies</h3>
+				<hr>
+					<div id="owl-four" class="owl-carousel mt-4 owl-theme">
+						<div class="item">
+								<div class="item_ply_btn">
+									<img src="{% static 'images/Drac.png'%}">
+								</div>
+								<div class="item_list_type">
+									<span>English,2019</span>
+									<a href="">Kaiserian Sanction and the Four </a>
+									<div class="movie-time">
+										<i class="fa fa-clock-o c1"></i>
+										<span>2 Hr 3 Min</span>
+									</div>
+								</div>
+						</div>
+					</div>
+				</div>
+			<div class="col-lg-3">
+				<h3 class="gallery_heading">Recent Clips Movies</h3>
+				<hr>
+					<div id="owl-five" class="owl-carousel mt-4 owl-theme">
+						<div class="item">
+								<div class="item_ply_btn">
+									<img src="{% static 'images/Drac.png'%}">
+								</div>
+								<div class="item_list_type">
+									<span>English,2019</span>
+									<a href="">Kaiserian Sanction and the Four </a>
+									<div class="movie-time">
+										<i class="fa fa-clock-o c1"></i>
+										<span>2 Hr 3 Min</span>
+									</div>
+								</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-3">
+					<h3 class="gallery_heading">Trend Movies</h3>
+					<hr>
+					<div id="owl-six" class="owl-carousel mt-4 owl-theme">
+						<div class="item">
+								<div class="item_ply_btn">
+									<img src="{% static 'images/Drac.png'%}">
+								</div>
+								<div class="item_list_type">
+									<span>English,2019</span>
+									<a href="">Kaiserian Sanction and the Four </a>
+									<div class="movie-time">
+										<i class="fa fa-clock-o c1"></i>
+										<span>2 Hr 3 Min</span>
+									</div>
+								</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-3">
+					<h3 class="gallery_heading">CinePlay Movies</h3>
+					<hr>
+					<div id="owl-seven" class="owl-carousel mt-4 owl-theme">
+						<div class="item">
+								<div class="item_ply_btn">
+									<img src="{% static 'images/Drac.png'%}">
+								</div>
+								<div class="item_list_type">
+									<span>English,2019</span>
+									<a href="">Kaiserian Sanction and the Four </a>
+									<div class="movie-time">
+										<i class="fa fa-clock-o c1"></i>
+										<span>2 Hr 3 Min</span>
+									</div>
+								</div>
+
+								<!-- <img src="{% static 'images/Drac.png'%}"> -->
+								<!-- <img src="{% static 'images/Drac.png'%}"> -->
+						</div><!-- item row end here-->
+
+						<div class="item">
+								<div class="item_ply_btn">
+									<img src="{% static 'images/Drac.png'%}">
+								</div>
+								<div class="item_list_type">
+									<span>English,2019</span>
+									<a href="">Kaiserian Sanction and the Four </a>
+									<div class="movie-time">
+										<i class="fa fa-clock-o c1"></i>
+										<span>2 Hr 3 Min</span>
+									</div>
+							</div>
+					</div>
+					
+				</div>
+
+			</div><!--- row end -->
+		 </div>
+	</div>
+</section>
+
+
+</body>
+<script src="{% static 'js/jquery.min.js'%}"></script>
+<script src="{% static 'OwlCarousel2/dist/owl.carousel.min.js'%}"></script>
+<script src="{% static 'bootstrap/js/bootstrap.min.js'%}"></script>
+<script src="{% static 'js/custom.js'%}"></script>
+</html>

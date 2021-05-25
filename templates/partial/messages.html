@@ -1,0 +1,20 @@
+<style type="text/css">
+		.message_email{
+		text-align: center;
+		background-color: #d281b5;
+		color: #bf2323;
+		padding: 6px;
+		border-radius: 13px;
+		}
+	</style>
+<!-- {% if messages %} -->
+<div class="messages">
+    {% for message in messages %}
+    <p class="message_email">
+    	<!-- {% if message.tags %}  -->
+    	<!-- {% endif %} -->
+        {{ message }}
+    </p>
+    {% endfor %}
+</div>
+<!-- {% endif %} -->

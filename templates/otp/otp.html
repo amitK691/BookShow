@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<form method="post">
+	{% if message %}
+            <div class="alert alert-{{class}}">
+                {{message}}
+            </div>
+            {% endif %}
+	{% csrf_token %}
+	<h1>Please enter the OTP has been sent to you</h1>
+	<input type="number" name="num_otp">
+	<input type="submit">
+</form>
+
+</body>
+</html>
